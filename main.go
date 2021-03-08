@@ -12,14 +12,23 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 
 	sw "github.com/darenliang/fastcounter/go"
 )
+
+func getPort() string {
+	p := os.Getenv("PORT")
+	if p != "" {
+		return ":" + p
+	}
+	return ":8080"
+}
 
 func main() {
 	log.Printf("Fast Counter API started")
 
 	router := sw.NewRouter()
 
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(getPort(), router))
 }
