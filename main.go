@@ -13,7 +13,7 @@ import (
 	"log"
 	"net/http"
 
-	sw "github.com/darenliang/fast-counter/go"
+	sw "github.com/darenliang/fastcounter/go"
 )
 
 func main() {

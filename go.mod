@@ -1,4 +1,4 @@
-module github.com/darenliang/fast-counter
+module github.com/darenliang/fastcounter
 
 go 1.16
 

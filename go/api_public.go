@@ -11,7 +11,7 @@ package swagger
 
 import (
 	"encoding/json"
-	"github.com/darenliang/fast-counter/db"
+	"github.com/darenliang/fastcounter/db"
 	"github.com/gorilla/mux"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"

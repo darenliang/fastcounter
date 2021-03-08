@@ -12,7 +12,7 @@ info:
 servers:
   - url: https://api.example.com
     description: Example API
-  - url: https://virtserver.swaggerhub.com/darenliang/fast-counter/1.0.0
+  - url: https://virtserver.swaggerhub.com/darenliang/fastcounter/1.0.0
     description: SwaggerHub API Auto Mocking
 tags:
   - name: public
