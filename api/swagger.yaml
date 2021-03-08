@@ -1,0 +1,62 @@
+openapi: 3.0.0
+info:
+  title: Fast Counter
+  description: A fast incrementing counter API
+  contact:
+    name: Daren Liang
+    email: daren@darenliang.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  version: 1.0.0
+servers:
+  - url: https://api.example.com
+    description: Example API
+  - url: https://virtserver.swaggerhub.com/darenliang/fast-counter/1.0.0
+    description: SwaggerHub API Auto Mocking
+tags:
+  - name: public
+    description: Public paths
+paths:
+  /hit/{key}:
+    get:
+      tags:
+        - public
+      summary: Hits key
+      description: |
+        Hits key and returns the new updated key value.
+      operationId: hitKey
+      parameters:
+        - name: key
+          in: path
+          description: Key to hit
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HitResponse'
+components:
+  schemas:
+    HitResponse:
+      required:
+        - key
+        - value
+      type: object
+      properties:
+        key:
+          type: string
+          example: foo
+        value:
+          type: integer
+          format: int64
+          example: 1024
+      example:
+        value: 1024
+        key: foo
