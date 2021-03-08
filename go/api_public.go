@@ -27,7 +27,7 @@ func HitKey(w http.ResponseWriter, r *http.Request) {
 	response := counters.FindOneAndUpdate(
 		db.Context,
 		bson.M{"key": key},
-		bson.M{"$inc": bson.M{"value": 1}},
+		bson.M{"$inc": bson.M{"value": int64(1)}},
 		&options.FindOneAndUpdateOptions{
 			Upsert:         &[]bool{true}[0],
 			ReturnDocument: &[]options.ReturnDocument{options.After}[0],
